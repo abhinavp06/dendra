@@ -1,2 +1,2 @@
 # dendra
-Open Source API Standard for Gig Economy
+Claim Documents Digitization Pipeline
