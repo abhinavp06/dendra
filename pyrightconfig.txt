@@ -1,0 +1,8 @@
+// RENAME TO JSON WHEN REQUIRED
+{
+   "venvPath": "gateway",
+   "venv": ".venv",
+   "executionEnvironments": [
+     { "root": "gateway" }
+  ]
+}

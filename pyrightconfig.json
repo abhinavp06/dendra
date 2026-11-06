@@ -1,7 +1,0 @@
-{
-  "venvPath": "gateway",
-  "venv": ".venv",
-  "executionEnvironments": [
-    { "root": "gateway" }
-  ]
-}
