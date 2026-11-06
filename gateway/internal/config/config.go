@@ -1,26 +1,27 @@
 package config
 
 import (
+	"log"
 	"os"
-	"strconv"
+
+	"github.com/joho/godotenv"
 )
 
 type Config struct {
 	Environment string
-	Port        int
+	Port        string
 }
 
-func Load() (Config, error) {
-	cfg := Config{}
-
-	cfg.Environment = os.Getenv("ENV", )
-	port, err := strconv.Atoi(os.Getenv("PORT"))
-
+func Load() Config {
+	err := godotenv.Load()
 	if err != nil {
-		return Config{}, err
+		log.Fatalf("Failed to load env: %v", err)
 	}
 
-	cfg.Port = port
+	cfg := Config{}
 
-	return cfg, nil
+	cfg.Environment = os.Getenv("ENV")
+	cfg.Port = os.Getenv("PORT")
+
+	return cfg
 }
