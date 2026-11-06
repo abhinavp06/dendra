@@ -1,4 +1,4 @@
-package config
+package main
 
 import (
 	"log"
@@ -7,18 +7,18 @@ import (
 	"github.com/joho/godotenv"
 )
 
-type Config struct {
+type config struct {
 	Environment string
 	Port        string
 }
 
-func Load() Config {
+func loadConfig() config {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatalf("Failed to load env: %v", err)
 	}
 
-	cfg := Config{}
+	cfg := config{}
 
 	cfg.Environment = os.Getenv("ENV")
 	cfg.Port = os.Getenv("PORT")
